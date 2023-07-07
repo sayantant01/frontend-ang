@@ -7,12 +7,14 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { AddresourceComponent } from './addresource/addresource.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     CreateProjectComponent,
     AddresourceComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

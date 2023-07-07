@@ -26,3 +26,17 @@
   </div>
   <button type="submit">Submit</button>
 </form>
+
+  
+        <div *ngIf="projectdetails">
+          <p> 
+           Title:{{projectdetails.title}}<br/>
+            Budget:{{projectdetails.budget}}<br/>
+            Start date:{{projectdetails.startDate}}
+             Expected End Date:{{projectdetails.expectedEndDate}}<br/>
+            Created On:{{projectdetails.createdOn}}<br/>
+            Status:{{projectdetails.status}}<br/>
+            last Updated On:{{projectdetails.lastUpdatedOn}}</p>
+        </div>
+      
+    

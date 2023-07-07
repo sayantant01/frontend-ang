@@ -10,8 +10,8 @@ export class CreateProjectComponent implements OnInit {
 
   data: any;
   errorMessage:any;
-
-  
+  projectdetails:any;
+  status:boolean=false;
   project = {
     title: '',
     budget: 0,
@@ -40,6 +40,9 @@ export class CreateProjectComponent implements OnInit {
 
     this.http.post('http://localhost:8080/api/projects/new',this.project).subscribe(responseData => {
   console.log(responseData);
+  this.status = true;
+  alert("Project Created Successfully");
+  this.projectdetails = responseData;
   console.log(this.project);
 },(error) => {
   console.error(error);

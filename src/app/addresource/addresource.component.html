@@ -1,1 +1,46 @@
-<p>addresource works!</p>
+<h1>Add Resource</h1>
+<form (ngSubmit)="onSubmit()" #resourceForm="ngForm">
+  <label for="name">First Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="resource.firstName" required>
+
+  <label for="name">Last Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="resource.lastName" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="resource.email" required>
+
+  <label for="phone">Mobile Number:</label>
+  <input type="text" id="phone" name="phone" [(ngModel)]="resource.phoneNumber" required>
+
+  <fieldset>
+    <legend>Role:</legend>
+    <label>
+      <input type="radio" name="role" value="developer" [(ngModel)]="resource.role" required>
+      Developer
+    </label>
+    <label>
+      <input type="radio" name="role" value="tester" [(ngModel)]="resource.role" required>
+      Tester
+    </label>
+  </fieldset>
+
+  <label for="project">Project:</label>
+  <select id="project" name="project" [(ngModel)]="resource.projectId" required>
+    <option value="">Select a project</option>
+    <option *ngFor="let project of projects" [value]="project.projectCode">{{ project.title }}</option>
+  </select>
+
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="resourceDetails">
+    <p> 
+        Resource Id:{{resourceDetails.userId}}<br/>
+        First Name:{{resourceDetails.firstName}}<br/>
+        Last Name:{{resourceDetails.lastName}}<br/>
+        Email:{{resourceDetails.email}}<br/>
+        Mobile Number:{{resourceDetails.phoneNumber}}<br/>
+        Role:{{resourceDetails.role}}<br/>
+        Project:{{resourceDetails.projectId}}<br/>
+      
+  </div>
+
